@@ -1,0 +1,133 @@
+{
+    "rpgChainStandardVersion": "0.2",
+    "name": "A Web of Peril: The Adventurer's Trial",
+    "description": "In a distant tranquil village, shadowed by an ancient forest, a tale of courage unfolds.\n\nA fearless adventurer arrives, drawn by whispers of a monstrous giant spider terrorizing the villagers. \n\nThus begins a perilous quest, a battle against darkness, where bravery and wit are the keys to triumph and the restoration of peace.",
+    "image": "https://source.unsplash.com/qVJoEVgQc-s/1280x720",
+    "rolls": [
+      {
+        "dc": "8",
+        "key": "ENEMY_ATTACK",
+        "label": "Rolling to attack the enemy",
+        "actionSuccess": "page:ENEMY_ATTACK_SUCCESS",
+        "actionFail": "page:ENEMY_ATTACK_FAIL"
+      },
+      {
+        "dc": "7",
+        "key": "FOREST_TRAP",
+        "label": "Rolling to avoid the trap",
+        "actionSuccess": "page:FOREST_TRAP_SUCCESS",
+        "actionFail": "page:FOREST_TRAP_FAIL"
+      }
+    ],
+    "pages": [
+      {
+        "key": "INDEX",
+        "markdown": "On your way to the quaint town, a sense of excitement bubbled within you at the thought of encountering fellow adventurers, souls as restless and daring as your own.\n\nYour mind was rich with knowledge, having spent weeks poring over ancient maps and mysterious tales about this region, and you were brimming with eagerness to delve into its hidden wonders.\n\nHowever, your anticipation is abruptly halted when the unmistakable sound of cracking twigs echo behind you, disrupting the quietude of your journey.",
+        "image": "https://source.unsplash.com/KpYvNH3IPVw/1280x720",
+        "options": [
+          {
+            "action": "page:ENEMY",
+            "label": "Turn around to investigate"
+          },
+          {
+            "action": "page:FOREST",
+            "label": "Run into the forest"
+          }
+        ]
+      },
+      {
+        "key": "ENEMY",
+        "markdown": "Hearing a menacing snarl outside your view, you swiftly ready your weapons, muscles tensing in preparation.\n\nSuddenly, a giant spider, its legs a terrifying dance of shadow and menace, leaps towards you from the darkness. Trouble, it seems, has a way of finding you in the least expected moments.\n\nIn this deadly dance, only one can emerge victorious.",
+        "image": "https://source.unsplash.com/f0y72o-PKHo/1280x720",
+        "options": [
+          {
+            "action": "roll:ENEMY_ATTACK",
+            "label": "Attack!"
+          }
+        ]
+      },
+      {
+        "key": "ENEMY_ATTACK_SUCCESS",
+        "markdown": "You unleash a flurry of strikes, your movements precise and lethal. The enemy falls before you in a quick, brutal display of your prowess.\n\n'Not too bad,' you muse to yourself with a hint of satisfaction. But then, a thought strikes you - if every adventure were this straightforward, the title of 'adventurer' would be far less revered.\n\nSavoring your small yet significant victory, you gather your resolve and proceed onwards, ready for whatever challenges lie ahead.",
+        "image": "https://source.unsplash.com/CpvKHHHOrZw/1280x720",
+        "options": [
+          {
+            "action": "page:COMPLETE",
+            "label": "Continue towards town"
+          }
+        ],
+        "displayRolls": [
+          "ENEMY_ATTACK"
+        ],
+        "xp": 50
+      },
+      {
+        "key": "ENEMY_ATTACK_FAIL",
+        "markdown": "Despite your best efforts, your defenses are breached.\n\nA sudden, sharp blow lands, sending waves of pain through your body. With a quick assessment of the dire situation, you make the tactical decision to retreat, narrowly escaping into the shadows before the darkness of unconsciousness can claim you.",
+        "image": "https://source.unsplash.com/P8LZaU52NME/1280x720",
+        "options": [
+          {
+            "action": "page:COMPLETE_FAIL",
+            "label": "Continue towards town"
+          }
+        ],
+        "displayRolls": [
+          "ENEMY_ATTACK"
+        ]
+      },
+      {
+        "key": "FOREST",
+        "markdown": "Your heart pounds furiously as you sprint into the dense woods, the creature's ominous footsteps echoing behind you. Survival instincts kick in, driving you to weave through the thick underbrush, desperate to shake off your pursuer.\n\nHowever, in your frenzied escape, you fail to notice a cleverly hidden net...",
+        "image": "https://source.unsplash.com/sp-p7uuT0tw/1280x720",
+        "options": [
+          {
+            "action": "roll:FOREST_TRAP",
+            "label": "Leap out of the way!"
+          }
+        ]
+      },
+      {
+        "key": "FOREST_TRAP_SUCCESS",
+        "markdown": "As you dart through the shadowy forest, your keen eyes catch a glimpse of a suspicious glint among the leaves. Instinctively, you leap to the side, narrowly avoiding a concealed rope trap that snaps shut where you stood just moments ago.\n\nLanding agilely, you can't help but feel a surge of triumph. Your quick reflexes and sharp awareness have saved you from a potentially perilous fate. With renewed confidence and a cautious eye, you continue your journey through the woods, ready to face whatever challenges lie ahead.",
+        "image": "https://source.unsplash.com/MMJx78V7xS8/1280x720",
+        "options": [
+          {
+            "action": "page:COMPLETE",
+            "label": "Continue towards town"
+          }
+        ],
+        "displayRolls": [
+          "ENEMY_ATTACK"
+        ],
+        "xp": 50
+      },
+      {
+        "key": "FOREST_TRAP_FAIL",
+        "markdown": "Suddenly, the trap springs, ensnaring your leg with a painful snap. You fall to the ground, immobilized and wincing in pain. The realization hits hard – you're now injured and vulnerable in the heart of the forest. As you struggle against the binds of the trap, a sense of urgency grips you, you find a way to free yourself and continue your journey, despite the setback.",
+        "image": "https://source.unsplash.com/5lpfduivaYA/1280x720",
+        "options": [
+          {
+            "action": "page:COMPLETE_FAIL",
+            "label": "Continue towards town"
+          }
+        ],
+        "displayRolls": [
+          "ENEMY_ATTACK"
+        ]
+      },
+      {
+        "key": "COMPLETE",
+        "markdown": "The welcoming arch of the town's entrance looms before you, signaling the end of this particular journey.\n\nAs you step through, a sense of accomplishment fills you, yet you're keenly aware that this is but one of many adventures that await. The path of an adventurer is never truly finished, and you look forward to the countless quests that still lie ahead.",
+        "image": "https://source.unsplash.com/magXHYQ61AY/1280x720",
+        "options": [],
+        "completionStatus": "SUCCESS"
+      },
+      {
+        "key": "COMPLETE_FAIL",
+        "markdown": "Limping towards the town's entrance, your body aches from the failed encounter. The trip didn't go as planned, and you're feeling both injured and defeated.\n\nAs you cross into the town, it marks the end of this harrowing journey, yet it's a stark reminder of the challenges and unpredictability of an adventurer's life. With a mix of relief and determination, you acknowledge the lessons learned and prepare for the road to recovery and future quests that await.",
+        "image": "https://source.unsplash.com/magXHYQ61AY/1280x720",
+        "options": [],
+        "completionStatus": "SUCCESS"
+      }
+    ]
+}
