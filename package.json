@@ -3,6 +3,17 @@
   "private": false,
   "version": "0.0.2",
   "type": "module",
+  "main": "dist/quest-player.cjs.js",
+  "module": "dist/quest-player.esm.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/quest-player.es.js",
+      "require": "./dist/quest-player.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
